@@ -4,6 +4,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { ReadComponent } from './pages/read/read.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { DeleteComponent } from './pages/delete/delete.component';
+import {CommentsRoutingModule} from "./comments-routing.module";
 
 
 
@@ -15,7 +16,8 @@ import { DeleteComponent } from './pages/delete/delete.component';
     DeleteComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CommentsRoutingModule
   ]
 })
 export class CommentsModule { }

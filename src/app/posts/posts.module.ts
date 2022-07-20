@@ -4,6 +4,7 @@ import { DeleteComponent } from './pages/delete/delete.component';
 import { CreateComponent } from './pages/create/create.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { ReadComponent } from './pages/read/read.component';
+import {PostsRoutingModule} from "./posts-routing.module";
 
 
 
@@ -15,7 +16,8 @@ import { ReadComponent } from './pages/read/read.component';
     ReadComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PostsRoutingModule
   ]
 })
 export class PostsModule { }
