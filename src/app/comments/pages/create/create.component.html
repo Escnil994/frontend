@@ -1,1 +1,38 @@
-<p>create works!</p>
+<section class="card-banner-two">
+  <h3>Leave your comments or recommendations here</h3>
+
+
+  <form [formGroup]="createComment" (ngSubmit)="create()">
+
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card card-comment">
+
+          <div class="m-3 mb-0">
+            <label for="comment-name" class="form-label">Name or NickName</label>
+            <input type="text" class="form-control" formControlName="name" id="comment-name" placeholder="your name">
+          </div>
+          <div class="m-3 mb-0">
+            <label for="comment-email" class="form-label">Email address (Your email address won't be
+              public)</label>
+            <input type="email" class="form-control" formControlName="email" id="comment-email"
+                   placeholder="name@example.com">
+          </div>
+          <div class="m-3 mb-0">
+            <label for="comment-content" class="form-label">Comment</label>
+            <textarea class="form-control" id="comment-content" formControlName="comment" rows="3"></textarea>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-sm-4 mt-5">
+        <div class="card mt-5 card-comment">
+          <button type="submit" class="btn btn-secondary send-comment">Send Comment</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</section>

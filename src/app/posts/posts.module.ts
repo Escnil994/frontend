@@ -5,6 +5,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { ReadComponent } from './pages/read/read.component';
 import {PostsRoutingModule} from "./posts-routing.module";
+import { LastPostsComponent } from './pages/last-posts/last-posts.component';
 
 
 
@@ -13,7 +14,11 @@ import {PostsRoutingModule} from "./posts-routing.module";
     DeleteComponent,
     CreateComponent,
     UpdateComponent,
-    ReadComponent
+    ReadComponent,
+    LastPostsComponent
+  ],
+  exports: [
+    LastPostsComponent
   ],
   imports: [
     CommonModule,

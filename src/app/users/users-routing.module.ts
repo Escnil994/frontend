@@ -4,11 +4,13 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./pages/login/login.component";
 import {CreateComponent} from "./pages/create/create.component";
 import {UpdateComponent} from "./pages/update/update.component";
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 const routes: Routes = [
   {
     path: '',
+    component: HomePageComponent,
     children: [
       {
         path: 'login', component: LoginComponent

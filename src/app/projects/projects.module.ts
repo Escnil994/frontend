@@ -5,6 +5,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { UpdateComponent } from './pages/update/update.component';
 import { ReadComponent } from './pages/read/read.component';
 import {ProjectsRoutingModule} from "./projects-routing.module";
+import { LastProjectsComponent } from './pages/last-projects/last-projects.component';
 
 
 
@@ -13,7 +14,11 @@ import {ProjectsRoutingModule} from "./projects-routing.module";
     DeleteComponent,
     CreateComponent,
     UpdateComponent,
-    ReadComponent
+    ReadComponent,
+    LastProjectsComponent
+  ],
+  exports: [
+    LastProjectsComponent
   ],
   imports: [
     CommonModule,

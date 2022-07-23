@@ -4,15 +4,23 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import {SharedModule} from "./shared/shared.module";
+import {PagesModule} from "./pages/pages.module";
+import {ProjectsModule} from "./projects/projects.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    PagesModule,
+    ProjectsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
