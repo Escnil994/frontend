@@ -8,6 +8,7 @@ import {SharedModule} from "./shared/shared.module";
 import {PagesModule} from "./pages/pages.module";
 import {ProjectsModule} from "./projects/projects.module";
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     SharedModule,
     PagesModule,
     ProjectsModule,

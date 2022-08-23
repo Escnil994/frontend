@@ -4,16 +4,21 @@ import {CreateComponent} from "./pages/create/create.component";
 import {UpdateComponent} from "./pages/update/update.component";
 import {DeleteComponent} from "./pages/delete/delete.component";
 import {ReadComponent} from "./pages/read/read.component";
+import {HomeProjectComponent} from "./pages/home-project/home-project.component";
+import {PreviewCreateComponent} from "./pages/preview-create/preview-create.component";
 
 
 const routes: Routes = [
   {
-    path: '', children: [
+    path: '',
+    component: HomeProjectComponent,
+    children: [
       { path: 'create', component: CreateComponent },
       { path: 'update', component: UpdateComponent },
       { path: 'delete', component: DeleteComponent },
       { path: 'get-projects', component: ReadComponent },
       { path: 'get-project', component: ReadComponent },
+      { path: 'project-preview/:project', component: PreviewCreateComponent },
       { path: '**', redirectTo: 'get-projects'}
     ]
   }

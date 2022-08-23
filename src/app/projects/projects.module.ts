@@ -6,6 +6,10 @@ import { UpdateComponent } from './pages/update/update.component';
 import { ReadComponent } from './pages/read/read.component';
 import {ProjectsRoutingModule} from "./projects-routing.module";
 import { LastProjectsComponent } from './pages/last-projects/last-projects.component';
+import { HomeProjectComponent } from './pages/home-project/home-project.component';
+import {SharedModule} from "../shared/shared.module";
+import {ReactiveFormsModule} from "@angular/forms";
+import { PreviewCreateComponent } from './pages/preview-create/preview-create.component';
 
 
 
@@ -15,14 +19,18 @@ import { LastProjectsComponent } from './pages/last-projects/last-projects.compo
     CreateComponent,
     UpdateComponent,
     ReadComponent,
-    LastProjectsComponent
+    LastProjectsComponent,
+    HomeProjectComponent,
+    PreviewCreateComponent
   ],
   exports: [
     LastProjectsComponent
   ],
-  imports: [
-    CommonModule,
-    ProjectsRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        ProjectsRoutingModule,
+        SharedModule,
+        ReactiveFormsModule
+    ]
 })
 export class ProjectsModule { }

@@ -1,1 +1,107 @@
-<p>create works!</p>
+<form id="projectForm"[formGroup]="projectForm" (ngSubmit)="createNewProject()">
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card card-comment">
+
+        <div class="m-3 mb-0">
+          <label for="title" class="form-label">Project title</label>
+          <input type="text" class="form-control" formControlName="title" id="title" placeholder="Project title">
+
+          <div class="row">
+            <div class="col text-danger">
+              <p *ngIf="validateField('title')">
+                Title is required, min 10
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="m-3 mb-0">
+          <label for="subtitle" class="form-label">Project subtitle</label>
+          <input type="text" class="form-control" formControlName="subtitle" id="subtitle"
+                 placeholder="Project Subtitle">
+
+          <div class="row">
+            <div class="col text-danger">
+              <p *ngIf="validateField('subtitle')">
+                Subtitle is required, min 10
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+        <div class="m-3 mb-0">
+          <label for="github" class="form-label">GitHub Url  --- <span class="text-success">(This is not required)</span></label>
+          <input type="URL" class="form-control" formControlName="github" id="github"
+                 placeholder="GitHub Url">
+
+
+        </div>
+        <div class="m-3 mb-0">
+          <label for="url" class="form-label">Test URL  --- <span class="text-success">(This is not required)</span></label>
+          <input type="URL" class="form-control" formControlName="url" id="url"
+                 placeholder="url test">
+
+
+
+        </div>
+        <div class="m-3 mb-0">
+          <label for="video" class="form-label">Project Video --- <span class="text-success">(This is not required)</span></label>
+          <input type="text" class="form-control" formControlName="video" id="video"
+                 placeholder="url video">
+
+
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+
+
+
+    <div class="col-sm-4 mt-5 justify-content-center align-item-center">
+
+      <div class="m-3 mb-0">
+        <label for="content" class="form-label">Content</label>
+        <textarea class="form-control" id="content" formControlName="content" rows="3"></textarea>
+
+        <div class="row">
+          <div class="col text-danger">
+            <p *ngIf="validateField('title')">
+              Content is required, min 30
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="m-3 mb-0">
+        <label for="more" class="form-label">More  --- <span class="text-success">(This is not required)</span></label>
+        <input type="text" class="form-control" formControlName="more" id="more"
+               placeholder="More">
+
+      </div>
+
+
+      <div class="card mt-5 card-comment save-button">
+        <button type="submit" class="btn btn-secondary send-comment">Save project</button>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+</form>
