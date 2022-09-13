@@ -1,22 +1,22 @@
-<div class="row">
-  <div class="col-sm-8">
-    <div class="card card-comment">
+<div class="container">
 
-      <p>
-        {{project}}
-      </p>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card card-comment">
+        <p>
+          {{project?.content}}
+        </p>
+      </div>
+    </div>
 
+
+    <div class="col-sm-4">
+
+        <img src="{{project?.image?.secure_url}}" alt="Failed to load" width="70%" class="m-auto">
 
     </div>
-  </div>
-
-
-  <div class="col-sm-4 mt-5 justify-content-center align-item-center">
-
 
 
   </div>
-
 
 </div>
-
