@@ -10,6 +10,7 @@ import { HomeProjectComponent } from './pages/home-project/home-project.componen
 import {SharedModule} from "../shared/shared.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import { PreviewCreateComponent } from './pages/preview-create/preview-create.component';
+import { GetProjectComponent } from './pages/get-project/get-project.component';
 
 
 
@@ -21,7 +22,8 @@ import { PreviewCreateComponent } from './pages/preview-create/preview-create.co
     ReadComponent,
     LastProjectsComponent,
     HomeProjectComponent,
-    PreviewCreateComponent
+    PreviewCreateComponent,
+    GetProjectComponent
   ],
   exports: [
     LastProjectsComponent

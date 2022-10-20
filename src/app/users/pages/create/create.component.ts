@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../../services/user.service";
 import {catchError} from "rxjs";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create',
@@ -33,8 +34,12 @@ export class CreateComponent {
     this.submittedForm = true
 
     this._userService.createUser(this.registerForm.value).subscribe(res =>{
-      console.log(res)
-    })
+      console.log(res);
+      
+      Swal.fire('Success','User created successfully!' , 'success')
+    }, error =>{
+      Swal.fire('Error', error.error.msg, 'error')
+    } )
 
 
   }

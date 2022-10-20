@@ -6,6 +6,8 @@ import {DeleteComponent} from "./pages/delete/delete.component";
 import {ReadComponent} from "./pages/read/read.component";
 import {HomeProjectComponent} from "./pages/home-project/home-project.component";
 import {PreviewCreateComponent} from "./pages/preview-create/preview-create.component";
+import { GetProjectComponent } from './pages/get-project/get-project.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 
 const routes: Routes = [
@@ -13,12 +15,12 @@ const routes: Routes = [
     path: '',
     component: HomeProjectComponent,
     children: [
-      { path: 'create', component: CreateComponent },
-      { path: 'update', component: UpdateComponent },
+      { path: 'create', component: CreateComponent, canActivate: [AuthGuard] },
+      { path: 'update', component: UpdateComponent, canActivate: [AuthGuard] },
       { path: 'delete', component: DeleteComponent },
       { path: 'get-projects', component: ReadComponent },
-      { path: 'get-project', component: ReadComponent },
-      { path: 'project-preview/:project', component: PreviewCreateComponent },
+      { path: 'get-project/:project', component: GetProjectComponent},
+      { path: 'project-preview/:project', component: PreviewCreateComponent , canActivate: [AuthGuard]},
       { path: '**', redirectTo: 'get-projects'}
     ]
   }

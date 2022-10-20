@@ -3,6 +3,7 @@ import { ProjectService } from "../../../services/project.service";
 import { ActivatedRoute } from "@angular/router";
 import Swal from 'sweetalert2';
 import { Project } from 'src/app/models/project.model';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-preview-create',
@@ -12,11 +13,16 @@ import { Project } from 'src/app/models/project.model';
 })
 export class PreviewCreateComponent implements OnInit {
 
+
+  load: boolean = true
+  imageToUpload!: File; 
+
   project?: Project
 
   constructor(
     private _projectService: ProjectService,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private _fileUpload: UploadService
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +49,24 @@ export class PreviewCreateComponent implements OnInit {
 
    
     
+  }
+
+
+  changeImage(event: any){
+    this.imageToUpload = event.files[0]
+    
+  }
+
+  uploadImage(){
+
+    this.load = false
+    this._fileUpload.updateImage(this.imageToUpload, this.project!._id).then(
+      img => {
+        this.project!.image!.secure_url = img
+        this.load = true
+
+      }
+    )
   }
 
 

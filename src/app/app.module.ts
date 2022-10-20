@@ -9,6 +9,8 @@ import {PagesModule} from "./pages/pages.module";
 import {ProjectsModule} from "./projects/projects.module";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
+import { ComponentsModule } from './components/components.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {RouterModule} from "@angular/router";
     SharedModule,
     PagesModule,
     ProjectsModule,
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

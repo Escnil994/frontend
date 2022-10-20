@@ -2,36 +2,13 @@
 <h3>Last projects</h3>
 
 <div class="news-cards">
-  <div>
-    <img src="./assets/design/img/news1.jpg" alt="New One">
-    <h3>Lorem, ipsum dolor.</h3>
+  <div *ngFor="let project of projects">
+    <img [src]="project.image?.secure_url" alt="Image">
+    <h3>{{project.title | slice: 0:35}}...</h3>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
+      {{project.subtitle | slice: 0 : 70}}...
     </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
+    <a [routerLink]="['/projects/get-project/',project._id]">Read More <i class="fas fa-angle-double-right"></i></a>
   </div>
-  <div>
-    <img src="./assets/design/img/news2.jpg" alt="New Two">
-    <h3>Lorem, ipsum dolor.</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
-    </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
-  </div>
-  <div>
-    <img src="./assets/design/img/news3.jpg" alt="New Three">
-    <h3>Lorem, ipsum dolor.</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
-    </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
-  </div>
-  <div>
-    <img src="./assets/design/img/news4.jpg" alt="New Four">
-    <h3>Lorem, ipsum dolor.</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
-    </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
-  </div>
+  
 </div>

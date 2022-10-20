@@ -1,22 +1,57 @@
-<div class="container">
+<h2>Preview de proyecto creado</h2>
 
+<br>
+
+<div class="card bg-secondary">
   <div class="row">
-    <div class="col-sm-8">
-      <div class="card card-comment">
-        <p>
-          {{project?.content}}
-        </p>
+    <div class="col-4">
+      <img [src]="project?.image?.secure_url" width="100%" alt="Imagen de proyecto">
+
+      <hr>
+      <div class="mb-1">
+        <span>Puedes cambiar la imagen</span>
+        <input class="form-control form-control-sm" id="formFileSm" type="file" (change)="changeImage($event.target)">
       </div>
-    </div>
 
-
-    <div class="col-sm-4">
-
-        <img src="{{project?.image?.secure_url}}" alt="Failed to load" width="70%" class="m-auto">
 
     </div>
+    <div class="col-8">
+      <h4 class="text-center">{{project?.title}}</h4>
+      <p class="text-center">{{project?.subtitle}}</p>
+      <li>{{project?.content}}</li>
+      <li><a class="text-primary" [href]="project?.github">Code in Github</a></li>
+      <li><a class="text-primary" [href]="project?.url">Test code</a></li>
+      <li><a class="text-primary" [href]="project?.video">Watch video on YouTube</a></li>
+
+      <span>
+        {{project?.more}}
+      </span>
+
+     
 
 
+      <div *ngIf="imageToUpload" class="text-center " style="margin-top: 4rem !important;">
+
+        <button *ngIf="!load" class="btn btn-warning" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Cambiando imagen...
+        </button>
+        <br>
+
+        <button type="button" class="btn btn-primary" (click)="uploadImage()" [disabled]="!imageToUpload">Update
+          Image</button>
+
+
+      </div>
+
+      <div *ngIf="!imageToUpload" class="text-center " style="margin-top: 4rem !important;">
+
+
+        <button type="button" class="btn btn-primary" [disabled]="!imageToUpload">No image to update</button>
+
+
+      </div>
+
+    </div>
   </div>
-
 </div>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ProjectService} from "../../../services/project.service";
 import {Router} from "@angular/router";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create',
@@ -54,13 +55,43 @@ export class CreateComponent implements OnInit {
 
 
     if (this.projectForm.valid) {
-      this._projectService.createProject(this.projectForm.value).subscribe(({project}) => {
-        if (project){
-          this._router.navigate(['/projects/project-preview/', project._id])
+      this._projectService.createProjects(this.projectForm.value).subscribe((res: any) => {
+        console.log(res);
+        
+        if (res){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Project has been saved!',
+            showConfirmButton: false,
+            timer: 2000
+          })
+          this._router.navigate(['/projects/project-preview/', res.project._id])
 
         }
 
       } , error => {
+        let timerInterval!: any 
+        Swal.fire({
+          title: 'Error, Session no valid!',
+          html: "You're being redirected to home",
+          text: 'Loggin and try againg',
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading()
+            const b = Swal.getHtmlContainer()!.querySelector('b')
+            timerInterval = setInterval(() => {
+            }, 100)
+          },
+          willClose: () => {
+            clearInterval(timerInterval)
+          }
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+          }
+        })
 
       })
     }

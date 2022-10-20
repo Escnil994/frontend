@@ -4,7 +4,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { BannerTwoComponent } from './banner-two/banner-two.component';
-import {RouterModule} from "@angular/router";
+import { RouterModule } from "@angular/router";
+
+
 
 
 

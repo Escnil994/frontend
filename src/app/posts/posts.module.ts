@@ -6,6 +6,8 @@ import { UpdateComponent } from './pages/update/update.component';
 import { ReadComponent } from './pages/read/read.component';
 import {PostsRoutingModule} from "./posts-routing.module";
 import { LastPostsComponent } from './pages/last-posts/last-posts.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,14 +17,16 @@ import { LastPostsComponent } from './pages/last-posts/last-posts.component';
     CreateComponent,
     UpdateComponent,
     ReadComponent,
-    LastPostsComponent
+    LastPostsComponent,
+    HomeComponent
   ],
   exports: [
     LastPostsComponent
   ],
   imports: [
     CommonModule,
-    PostsRoutingModule
+    PostsRoutingModule,
+    SharedModule
   ]
 })
 export class PostsModule { }

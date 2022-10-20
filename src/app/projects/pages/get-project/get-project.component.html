@@ -1,0 +1,33 @@
+<div class="row border">
+    <div class="text-center">
+        <h1>{{project?.title}}</h1>
+        <hr>
+        <div class="image">
+            <img [src]="project?.image?.secure_url" alt="">
+        </div>
+
+        <br><br>
+
+        <h4>{{project?.subtitle}}</h4>
+
+    </div>
+   
+
+    <div class="container">
+        <ul>
+            <li>
+                {{project?.content}}
+            </li>
+            <br>
+            <li>
+                Puedes hacer pruebas desde el siguiente link: <a [href]="project?.url">{{project?.url}}</a>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+
+
+</div>

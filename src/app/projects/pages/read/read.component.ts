@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Project } from 'src/app/models/project.model';
+import { ProjectService } from 'src/app/services/project.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-read',
@@ -8,9 +12,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadComponent implements OnInit {
 
-  constructor() { }
+  public projects: Project[] = []
+
+
+  constructor(
+    private projectService: ProjectService
+  ) { }
 
   ngOnInit(): void {
+    
+    this.projectService.getProjects().subscribe(res => {
+      
+      this.projects = res
+
+      console.log(res);
+      
+      
+      
+    }, error => {
+      console.log(error);
+      
+    })
   }
+
+
+
+ 
 
 }

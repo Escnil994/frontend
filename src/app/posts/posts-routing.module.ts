@@ -4,10 +4,13 @@ import {ReadComponent} from "./pages/read/read.component";
 import {UpdateComponent} from "./pages/update/update.component";
 import {DeleteComponent} from "./pages/delete/delete.component";
 import {CreateComponent} from "./pages/create/create.component";
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
-    path: '', children: [
+    path: '',
+    component: HomeComponent,
+    children: [
       {
         path: 'get-posts', component: ReadComponent
       },
@@ -41,3 +44,5 @@ const routes: Routes = [
   ]
 })
 export class PostsRoutingModule { }
+
+

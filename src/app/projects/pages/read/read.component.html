@@ -1,1 +1,14 @@
-<p>read works!</p>
+<h3>projects</h3>
+
+<div class="news-cards">
+  <div *ngFor="let project of projects">
+    <img [src]="project.image?.secure_url" alt="New One">
+    <h3>{{project.title}}</h3>
+    <p>
+      {{project.subtitle}}
+    </p>
+    <a [routerLink]="['/projects/get-project/',project._id]">Read More <i
+        class="fas fa-angle-double-right"></i></a>
+  </div>
+
+</div>

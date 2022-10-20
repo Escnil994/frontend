@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/post.model';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-read',
@@ -8,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadComponent implements OnInit {
 
-  constructor() { }
+  public posts: Post[] = []
+
+
+  constructor(
+    private postService: PostService
+  ) { }
 
   ngOnInit(): void {
+    
+    this.postService.getPosts().subscribe(res => {
+      
+      this.posts = res
+
+      console.log(res);
+      
+      
+      
+    }, error => {
+      console.log(error);
+      
+    })
   }
 
+
+
+ 
 }

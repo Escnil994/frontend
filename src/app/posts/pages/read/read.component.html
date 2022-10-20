@@ -1,1 +1,14 @@
-<p>read works!</p>
+<h3>Posts</h3>
+
+<div class="news-cards">
+  <div *ngFor="let post of posts">
+    <img [src]="post.image?.secure_url" alt="New One">
+    <h3>{{post.title}}</h3>
+    <p>
+      {{post.subtitle}}
+    </p>
+    <a [routerLink]="['/projects/get-project/',post._id]">Read More <i
+        class="fas fa-angle-double-right"></i></a>
+  </div>
+
+</div>

@@ -5,6 +5,7 @@ import {SharedModule} from "../shared/shared.module";
 import {ProjectsModule} from "../projects/projects.module";
 import {PostsModule} from "../posts/posts.module";
 import {CommentsModule} from "../comments/comments.module";
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -20,7 +21,8 @@ import {CommentsModule} from "../comments/comments.module";
     SharedModule,
     ProjectsModule,
     PostsModule,
-    CommentsModule
+    CommentsModule,
+    ComponentsModule
   ]
 })
 export class PagesModule { }

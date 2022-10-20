@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
+import Swal from 'sweetalert2';
 import {CommentServiceService} from "../../../services/comment-service.service";
 
 @Component({
@@ -27,8 +28,22 @@ export class CreateComponent implements OnInit {
   create(){
     this._CommentService.createComment(this.createComment.value).subscribe(res =>{
 
+      Swal.fire(
+        'Good job!',
+        'This comment has beeen save!',
+        'success'
+      )
+
+      
+
     }, error => {
-      console.log(error)
+      
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Something went wrong! '"+error.error.name+"'"
+       
+      })
     })
 
   }
