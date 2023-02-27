@@ -3,7 +3,7 @@ export class Post {
     constructor(
       public _id: string,
       public title: string,
-      public subtitle: string,
+      public intro: string,
       public content: string,
       public github?: string,
       public url?: string,

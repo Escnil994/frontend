@@ -2,36 +2,12 @@
 <h3>Last Posts</h3>
 
 <div class="news-cards">
-  <div>
-    <img src="/assets/design/img/news1.jpg" alt="New One">
-    <h3>Lorem, ipsum dolor.</h3>
+  <div *ngFor="let post of posts">
+    <img [src]="post.image?.secure_url" alt="ost image">
+    <h3>{{post.title | slice: 0: 35}}</h3>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
+      {{post.intro | slice: 0 : 65}}
     </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
-  </div>
-  <div>
-    <img src="./assets/design/img/news2.jpg" alt="New Two">
-    <h3>Lorem, ipsum dolor.</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
-    </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
-  </div>
-  <div>
-    <img src="/assets/design/img/news3.jpg" alt="New Three">
-    <h3>Lorem, ipsum dolor.</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
-    </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
-  </div>
-  <div>
-    <img src="/assets/design/img/news4.jpg" alt="New Four">
-    <h3>Lorem, ipsum dolor.</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, at?
-    </p>
-    <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
+    <a href="#">Read More <i class="fas fa-angle-double-right"></i></a>
   </div>
 </div>

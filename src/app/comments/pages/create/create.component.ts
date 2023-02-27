@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import {CommentServiceService} from "../../../services/comment-service.service";
 
@@ -18,7 +19,8 @@ export class CreateComponent implements OnInit {
   })
 
   constructor(
-    private _CommentService: CommentServiceService
+    private _CommentService: CommentServiceService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +35,7 @@ export class CreateComponent implements OnInit {
         'This comment has beeen save!',
         'success'
       )
-
+      
       
 
     }, error => {

@@ -4,6 +4,7 @@ import {CreateComponent} from "./pages/create/create.component";
 import {UpdateComponent} from "./pages/update/update.component";
 import {DeleteComponent} from "./pages/delete/delete.component";
 import {ReadComponent} from "./pages/read/read.component";
+import { AuthGuard } from '../guards/auth.guard';
 
 
 const routes: Routes = [
@@ -21,6 +22,9 @@ const routes: Routes = [
       },
       {
         path: 'get-comments', component: ReadComponent
+      },
+      {
+        path: 'autorize-comment/:id', component: UpdateComponent, canActivate: [AuthGuard]
       },
       {
         path: '**', redirectTo: 'get-comments'

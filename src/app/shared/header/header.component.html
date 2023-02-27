@@ -4,7 +4,7 @@
   <div class="container-fluid">
 
     <a href="" class="nav-brand">
-      <img src="./assets/design/img/brand.png" alt="TechNews LOGO" class="nav-brand">
+      <img src="https://res.cloudinary.com/dorqesogu/image/upload/v1667877000/portafolio/brand_i14uqt.png" alt="TechNews LOGO" class="nav-brand">
     </a>
 
 
@@ -40,7 +40,7 @@
           </li>
 
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="token != null && token != '' && token != 'empty'">
             <a class="nav-link" routerLink="/projects/create">create project</a>
           </li>
 
